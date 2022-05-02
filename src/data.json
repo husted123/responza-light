@@ -1,0 +1,28 @@
+ [
+        {
+            "id": 1,
+            "name": "Category 1",
+            "articles": [
+                {
+                    "name": "Article 1",
+                    "text" : "tpijpodqjwdpoqjwpoid"
+                },
+                {
+                    "name": "Article 2",
+                    "text" : "qwdqwfqfqwdqwdqwd"
+                },
+                {
+                    "name": "Article 3",
+                    "text" : "tpijpo1231231oqjwpoid"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Category 2"
+        },
+        {
+            "id": 3,
+            "name": "Category 3"
+        }
+    ]
