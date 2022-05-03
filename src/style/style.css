@@ -57,4 +57,26 @@
   top: 50%;
   left: 50%;
 }
+
+.search_wrapper {
+  height: 25vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.search_wrapper input {
+  padding: 12px;
+  width: 30%;
+  background-image: url(searchicon.png);
+  background-repeat: no-repeat;
+  background-position-y: center;
+  background-position-x: 10px;
+  text-indent: 35px;
+}
 /*# sourceMappingURL=style.css.map */

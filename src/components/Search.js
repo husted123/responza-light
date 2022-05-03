@@ -1,8 +1,9 @@
 import React from 'react';
 
 const Search = () => (
-    <input type="text" placeholder='search a question or problem'/>
-
+    <div class="search_wrapper">
+    <input type="text" placeholder= 'search a question or problem'/>
+    </div>
 )
 
 export default Search;

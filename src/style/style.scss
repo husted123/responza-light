@@ -3,7 +3,7 @@
     padding:0;
 }
 
-//categories
+// Categories
 .categories_wrapper{
     display: flex;
     flex-direction: row;
@@ -38,5 +38,22 @@
             top: 50%;
             left: 50%;
         }
+    }
+}
+// Search
+.search_wrapper{
+    height: 25vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    input{
+        padding: 12px;
+        width: 30%;
+        background-image: url(searchicon.png);
+        background-repeat: no-repeat;
+        background-position-y: center;
+        background-position-x: 10px;
+        text-indent: 35px;
+
     }
 }
