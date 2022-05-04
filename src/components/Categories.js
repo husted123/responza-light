@@ -5,12 +5,13 @@ import {Link} from "react-router-dom";
 
 const Categories = (props) => 
    { 
+       const logo = dummy;
        return (   
         <div class="categories_wrapper">
         {props.cat.map(category => (
-            <Link to={`/${category.id}`}>
+            <Link to={`/${category.name}`}>
                 <div key={category.id} id={category.id} class="category" >
-                    <img alt="dummy" src={dummy}></img>
+                <i class={category.logo}></i>
                     <h1>{category.name}</h1>   
                 </div> 
             </Link>

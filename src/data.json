@@ -2,6 +2,7 @@
         {
             "id": 1,
             "name": "Category 1",
+            "logo" : "fa-regular fa-circle-user fa-4x",
             "articles": [
                 {
                     "name": "Article 1",
@@ -20,6 +21,7 @@
         {
             "id": 2,
             "name": "Category 2",
+            "logo" : "fa-regular fa-book fa-4x",
             "articles": [
                 {
                     "name": "Article 1",
@@ -30,6 +32,7 @@
         {
             "id": 3,
             "name": "Category 3",
+            "logo" : "fa-regular fa-briefcase fa-4x",
             "articles": [
                 {
                     "name": "Article 1",
@@ -41,6 +44,7 @@
         {
             "id": 4,
             "name": "Category 4",
+            "logo" : "fa-regular fa-clone fa-4x",
             "articles": [
                 {
                     "name": "Article 1",

@@ -1,6 +1,15 @@
 * {
   margin: 0;
   padding: 0;
+  text-decoration: none;
+}
+
+h1 {
+  font-family: 'DIN';
+  font-style: bold;
+  font-size: 24px;
+  line-height: 29px;
+  color: #DC0059;
 }
 
 .categories_wrapper {
@@ -18,6 +27,7 @@
 }
 
 .categories_wrapper .category {
+  text-align: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -35,11 +45,6 @@
 }
 
 .categories_wrapper .category h1 {
-  font-family: 'DIN';
-  font-style: bold;
-  font-size: 24px;
-  line-height: 29px;
-  color: #DC0059;
   position: relative;
   top: 45%;
   -webkit-transform: translateY(-100%);
@@ -49,13 +54,13 @@
       align-self: center;
 }
 
-.categories_wrapper .category img {
-  width: 50%;
+.categories_wrapper .category i {
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   position: relative;
   top: 50%;
   left: 50%;
+  color: #DC0059;
 }
 
 .search_wrapper {
@@ -78,5 +83,52 @@
   background-position-y: center;
   background-position-x: 10px;
   text-indent: 35px;
+}
+
+.detail_wrapper {
+  background: #FFFFFF;
+  border: 15px solid #D5D6D2;
+  -webkit-box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  margin: 0 15%;
+  padding: 25px;
+}
+
+.detail_wrapper i {
+  color: #DC0059;
+}
+
+.detail_wrapper .detail_header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.detail_wrapper .detail_header .header_left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.detail_wrapper .detail_header .header_left i {
+  margin-right: 10px;
 }
 /*# sourceMappingURL=style.css.map */

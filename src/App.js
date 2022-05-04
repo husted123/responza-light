@@ -4,7 +4,11 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
+
+
+
 // Import components
+import dummy from './components/img/cat-dummy.png'
 import Search from "./components/Search"
 import Categories from './components/Categories';
 import CategoryDetail from './components/CategoryDetail';
@@ -20,7 +24,7 @@ function App() {
           <Search />
       <Routes>
           <Route path="/" element={<Home />}></Route>
-          <Route path="/:name" exact element={<CategoryDetail cat={categories} />} ></Route>
+          <Route path="/:name"  element={<CategoryDetail cat={categories} logo={dummy} />} ></Route>
       </Routes>
     </Router>
   );
