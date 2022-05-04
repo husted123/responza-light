@@ -1,14 +1,19 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import {Link} from "react-router-dom";
+import Modal from './Modal';
 
 const CategoryDetail = (props) => 
    { 
+      // Get name of category from URL parameters, we can then use name to look up the category properties
       let {name} = useParams();
-      const item = props.cat.find( element => element.name == name )
-      console.log(item);
-      console.log(props.dummy);
+      const item = props.cat.find( element => element.name === name )
+      // This state determines whether or not the modal is shown, in the returned html we use conditional rendering to show modal if boolen is true
+      // we do this by typing  {openModal && <Modal/>}
+      const [openModal, setOpenModal] = useState(false)
+      const [articleItem, setArticleItem] = useState({})
        return (   
+          <div>
             <div class="detail_wrapper">
                <div class="detail_header">
                   <div class="header_left">
@@ -23,13 +28,21 @@ const CategoryDetail = (props) =>
                </div>
                <div class="detail_main">
                {item.articles.map(article => ( 
-                  <li>
-                     <h1>{article.name}</h1>
-                     <p>{article.text}</p>
-                  </li>
+                  <div class="article_container" onClick={() => {setOpenModal(true); setArticleItem(article)}} >
+                     <div class="container_left">
+                        <i class="fa-solid fa-circle-arrow-right fa-2x"></i>
+                        <div>
+                           <h1>{article.name}</h1>
+                           <p>{article.text}</p>
+                        </div>
+                     </div>
+                        <h2>{article.timestamp}</h2>
+                  </div>
                ))}
                </div>
             </div>
+            {openModal && <Modal article={articleItem} closeModal={setOpenModal}/>}
+         </div>
         );
    };
 
