@@ -1,7 +1,5 @@
 import React from 'react';
 import {useState, useEffect} from 'react'
-import SearchIcon from "@material-ui/icons/Search";
-import CloseIcon from "@material-ui/icons/Close";
 import Modal from './Modal';
 
 function SearchBar(props) {
@@ -32,7 +30,7 @@ function SearchBar(props) {
     };
   
     return (
-    <div>
+    <div class="search_wrapper">
         <div class="search">
           <div class="searchInputs">
             <input
@@ -43,9 +41,9 @@ function SearchBar(props) {
             />
             <div class="searchIcon">
               {filteredData.length === 0 ? (
-                <SearchIcon />
+                <i class="fa-regular fa-magnifying-glass"></i>
               ) : (
-                <CloseIcon id="clearBtn" onClick={clearInput} />
+                <i class="fa-regular fa-xmark" onClick={clearInput}></i>
               )}
             </div>
           </div>

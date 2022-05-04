@@ -81,7 +81,7 @@ p {
 }
 
 .search {
-  height: 25vh;
+  margin: 5% 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -193,6 +193,7 @@ p {
 }
 
 .modal_background .modal_container {
+  z-index: 999;
   width: 75%;
   height: 75%;
   background-color: white;
@@ -231,22 +232,30 @@ p {
 }
 
 .searchInputs {
-  margin-top: 105px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
 .search input {
-  background-color: white;
   border: 0;
-  border-radius: 2px;
+  outline: 0;
+  background-color: white;
+  outline: none;
+  border-top: 1px solid grey;
+  border-left: 1px solid grey;
+  border-bottom: 1px solid grey;
+  border-radius: 5px;
   border-top-right-radius: 0px;
   border-bottom-right-radius: 0px;
   font-size: 18px;
   padding: 15px;
   height: 30px;
   width: 300px;
+}
+
+.search input input:focus {
+  outline: none !important;
 }
 
 .searchIcon {
@@ -256,6 +265,12 @@ p {
   display: -ms-grid;
   display: grid;
   place-items: center;
+  border-top: 1px solid grey;
+  border-right: 1px solid grey;
+  border-bottom: 1px solid grey;
+  border-radius: 5px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
 
 input:focus {
