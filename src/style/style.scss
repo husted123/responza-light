@@ -1,3 +1,5 @@
+
+// Globals
 *{
     margin: 0;
     padding:0;
@@ -16,6 +18,10 @@ h2{
     font-size: 20px;
     line-height: 29px;
     color: #DC0059;
+}
+h3{
+    font-family: 'Calibri';
+    
 }
 p{
     font-family: 'DIN';
@@ -59,18 +65,7 @@ p{
 
     }
 }
-// Search
-.search{
-    margin: 5% 0;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    input{
-        padding: 12px;
-        width: 30%;
-        
-    }
-}
+
 // .CategoryDetail 
 .detail_wrapper{
     background: #FFFFFF;
@@ -115,6 +110,8 @@ p{
         }
     }
 }
+
+//Modal for articles
 .modal_background{
     width: 100vw;
     height: 100vh;
@@ -151,6 +148,21 @@ p{
     }
 
 }
+
+// Search
+.search_wrapper{
+    .search{
+        height: 350px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+        input{
+            padding: 12px;
+            width: 30%;
+            
+        }
+    }
 .searchInputs {
     display: flex;
   }
@@ -170,6 +182,44 @@ p{
     padding: 15px;
     height: 30px;
     width: 300px;
+  }
+  .dataResult {
+    margin-top: 5px;
+    padding: 15px;
+    width: 340px;
+    height: 200px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    overflow: hidden;
+    overflow-y: auto;
+  }
+  
+  .dataResult::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .dataResult .dataItem {
+    width: 100%;
+    height: 50px;
+    padding: 5px 0px;
+    display: flex;
+    align-items: center;
+    color: black;
+  }
+  
+  .dataItem p {
+    margin-left: 10px;
+  }
+  a {
+    text-decoration: none;
+  }
+  
+  a:hover {
+    background-color: lightgrey;
+  }
+  
+  #clearBtn {
+    cursor: pointer;
   }
   
   .searchIcon {
@@ -193,39 +243,35 @@ p{
     font-size: 35px;
   }
   
-  .dataResult {
-    margin-top: 5px;
-    width: 300px;
-    height: 200px;
-    background-color: white;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    overflow: hidden;
-    overflow-y: auto;
-  }
-  
-  .dataResult::-webkit-scrollbar {
-    display: none;
-  }
-  
-  .dataResult .dataItem {
-    width: 100%;
-    height: 50px;
+ 
+}
+
+// Admin Navigation
+nav{
+    position: fixed;
+    top: 15px;
+    z-index: 99;
     display: flex;
-    align-items: center;
-    color: black;
-  }
-  
-  .dataItem p {
-    margin-left: 10px;
-  }
-  a {
-    text-decoration: none;
-  }
-  
-  a:hover {
-    background-color: lightgrey;
-  }
-  
-  #clearBtn {
-    cursor: pointer;
-  }
+    flex-direction: column;
+
+    a{
+        text-decoration: none;
+        color: black;
+        margin: 5px 0px;
+        width: 200px;
+        padding: 15px;
+        border: #D5D6D2 1px solid;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+
+    }
+    .active{
+        border-right: #DC0059  solid 3.5px;
+    }
+
+}
+
+// Admin article view
+.article_wrapper{
+    margin-left: 250px;
+}

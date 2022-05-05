@@ -8,7 +8,6 @@ function Modal(props) {
             <div class="modal_container">
             <i class="fa-solid fa-x fa-2x" onClick={() => props.closeModal(false)}></i>
                 <div className="modal_content">
-                  
                     <div class="title">
                         <div class="title_left">
                             <h1>{article.name}</h1>

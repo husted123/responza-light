@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import Modal from './Modal';
 
 const CategoryDetail = (props) => 
    { 
+      const navigate = useNavigate()
       // Get name of category from URL parameters, we can then use name to look up the category properties
       let {name} = useParams();
       const item = props.cat.find( element => element.name === name )
@@ -21,9 +22,9 @@ const CategoryDetail = (props) =>
                      <h1>{item.name}</h1>
                   </div>
                   <div class="header_right">
-                     <Link to="/">
-                     <i class="fa-regular fa-circle-left fa-3x"></i>
-                     </Link>
+
+                     <i class="fa-regular fa-circle-left fa-3x" onClick={() => navigate(-1)}></i>
+
                   </div>
                </div>
                <div class="detail_main">

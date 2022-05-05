@@ -28,7 +28,7 @@ function SearchBar(props) {
       setFilteredData([]);
       setWordEntered("");
     };
-  
+    
     return (
     <div class="search_wrapper">
         <div class="search">
