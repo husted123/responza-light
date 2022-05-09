@@ -13,6 +13,9 @@ import Nav from './components/Nav';
 import SearchBar from './components/SearchBar';
 import Categories from './components/Categories';
 import CategoryDetail from './components/CategoryDetail';
+import Styling from './components/Styling';
+
+// Data and CSS
 import categories from "./data.json"
 import "./style/style.css";
 
@@ -36,6 +39,7 @@ function App() {
             <Route path="/admin" element={<><Admin /> <Home /></>}></Route>
             <Route path="/admin/:name" element={<><Admin /> <CategoryOpen /></>} />
             <Route path="/articles" element={<><Admin /> <Articles articles={articles} /></>}></Route>
+            <Route path="/styling" element={<><Admin /> <Styling /></>}> </Route>
         </Routes>
     </Router>
   );

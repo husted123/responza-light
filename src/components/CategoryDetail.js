@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import {Link, useNavigate} from "react-router-dom";
 import Modal from './Modal';
@@ -13,6 +13,15 @@ const CategoryDetail = (props) =>
       // we do this by typing  {openModal && <Modal/>}
       const [openModal, setOpenModal] = useState(false)
       const [articleItem, setArticleItem] = useState({})
+      useEffect(() => {
+         var element = document.getElementById("root");
+         if(openModal === true) {
+            element.classList.add("active")
+         } else {
+            element.classList.remove("active")
+         }
+       }, [openModal]);
+      
        return (   
           <div>
             <div class="detail_wrapper">
