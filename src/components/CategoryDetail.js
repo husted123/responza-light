@@ -5,16 +5,12 @@ import Modal from './Modal';
 
 
 const CategoryDetail = (props) => 
-   { 
-      console.log(props.articles);
-      
+   {  
       const navigate = useNavigate()
       // Get name of category from URL parameters, we can then use name to look up the category properties
       const {name} = useParams();
       const item = props.cat.find( element => element.name === name )
-
       const filteredArticles = props.articles.filter( (article => article.category === name) )
-      console.log(filteredArticles);
       // This state determines whether or not the modal is shown, in the returned html we use conditional rendering to show modal if boolen is true
       // we do this by typing  {openModal && <Modal/>}
       const [openModal, setOpenModal] = useState(false)

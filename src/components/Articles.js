@@ -28,7 +28,7 @@ function Articles (props){
                     <td>{article.timestamp}</td>  
                     <td>{article.category}</td>  
                     <td class="td_icons">
-                        <i class="fa-regular fa-pen-to-square fa-xl"></i>
+                        <Link to="/edit-article" state={article.id} ><i class="fa-regular fa-pen-to-square fa-xl"></i></Link>
                         <i onClick={() => {remove(article.id)}} class="fa-regular fa-trash-can fa-xl"></i>
                     </td>
                 </tr>

@@ -12,12 +12,13 @@ import CategoryOpen from './components/CategoryOpen';
 import Home from './components/Home';
 import Articles from './components/Articles';
 import Nav from './components/Nav';
-
+import EditArticle from './components/EditArticle';
 import Styling from './components/Styling';
 import CreateArticle from './components/CreateArticle';
 
 // Data and CSS
 import "./style/style.css";
+
 
 
 function App() {
@@ -32,7 +33,6 @@ function App() {
 
     getCategories()
   }, [])
-  console.log(categories);
   // get articles from database
   const [articles, setArticles] = useState([]);
   const articlesRef = collection(db, "articles")
@@ -60,6 +60,7 @@ function App() {
             <Route path="/articles" element={<><Admin /> <Articles articles={articles} remove={deleteArticle} /></>}></Route>
             <Route path="/styling" element={<><Admin /> <Styling /></>}> </Route>
             <Route path="/create-article" element={<><Admin /><CreateArticle articlesRef={articlesRef} articles={articles}/></>}></Route>
+            <Route path="/edit-article" element={<><Admin /><EditArticle db={db} articlesRef={articlesRef} articles={articles}/></>}></Route>
         </Routes>
     </Router>
   );
