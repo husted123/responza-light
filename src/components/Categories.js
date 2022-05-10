@@ -1,11 +1,9 @@
 import React from 'react';
-import dummy from './img/cat-dummy.png'
 import {Link} from "react-router-dom";
 
 
 const Categories = (props) => 
    { 
-       const logo = dummy;
        return (   
         <div class="categories_wrapper">
         {props.cat.map(category => (
