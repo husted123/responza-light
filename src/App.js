@@ -43,7 +43,7 @@ function App() {
     };
 
     getArticles()
-  }, [articles, articlesRef])
+  }, [articles])
 
   const deleteArticle = async (id) => {
     const articleDoc = doc(db, "articles", id);
