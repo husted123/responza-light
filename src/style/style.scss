@@ -396,6 +396,15 @@ nav{
         margin-right: 15px;
         width: 200px;
     }
+    select{
+        outline: none;
+        border: none;
+        padding: 7.5px;
+        border: 1px solid gray;
+        border-radius: 5px;
+        margin-right: 15px;
+        width: 215px;
+    }
     .resume_input{
         width: 300px;
     }

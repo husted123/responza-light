@@ -2,12 +2,12 @@ import { initializeApp } from "firebase/app";
 import {getFirestore} from '@firebase/firestore'
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCG790c3g0oiNZSTeaovGYcIA1U73FmKsQ",
-  authDomain: "responza-light-db.firebaseapp.com",
-  projectId: "responza-light-db",
-  storageBucket: "responza-light-db.appspot.com",
-  messagingSenderId: "800337635014",
-  appId: "1:800337635014:web:7c517b368b91ab4b4799c7"
+  apiKey: "AIzaSyDmT4xCAKvZVmHuzwVW2W257wdL-SvXZ5M",
+  authDomain: "responza-light-v2.firebaseapp.com",
+  projectId: "responza-light-v2",
+  storageBucket: "responza-light-v2.appspot.com",
+  messagingSenderId: "748995649903",
+  appId: "1:748995649903:web:49b3f6f5e6fba29211c89a"
 };
 
 // Initialize Firebase

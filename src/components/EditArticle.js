@@ -35,7 +35,9 @@ function EditArticle(props) {
       <h4> Title </h4>
       <input value={title} onInput={e => setTitle(e.target.value)} id="title" type="text" />
       <h4>Category</h4>
-      <input value={category} onInput={e => setCategory(e.target.value)} type="text" />
+      <select value={category} onInput={e => setCategory(e.target.value)}>
+        {props.cat.map( category => (<option value={category.name}>{category.name}</option>))}
+      </select>
       <h4>Resume</h4>
       <input value={resume} onInput={e => setResume(e.target.value)} class="resume_input"type="text" />
       <h4>Text</h4>

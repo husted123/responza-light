@@ -29,7 +29,7 @@ const CategoryDetail = (props) =>
             <div class="detail_wrapper">
                <div class="detail_header">
                   <div class="header_left">
-                     <i class={item.logo}></i>
+                  <i class={"fa-regular " + item.icon + " fa-4x"}></i>
                      <h1>{item.name}</h1>
                   </div>
                   <div class="header_right">

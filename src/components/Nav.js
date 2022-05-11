@@ -8,6 +8,7 @@ function Nav() {
         <a><img alt="logo" src={logo}></img></a>
         <NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} to="/admin">Interface</NavLink>
         <NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} to="/articles">Articles</NavLink>
+        <NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} to="/categories-list">Categories</NavLink>
         <NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} to="/styling">Styling</NavLink>
       </nav>
     )

@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react"
 import { Link } from "react-router-dom";
 
 
-function Articles (props){
+function CategoriesList (props){
     const remove = props.remove;
     const update = props.update
-    const articles = props.articles
+    const categories = props.cat
     
     
     // collects articles from db on first render, then stops
@@ -14,29 +14,26 @@ function Articles (props){
       }, []);
     return(
         <div class="article_wrapper">
-            <h3>Edit articles</h3>
+            <h3>Edit Categories</h3>
             
             <table>
                 <tr>
                 <div class="article_util">
                 <input placeholder="Search for articles"  ></input>
-                <Link to="/create-article" >Create article </Link>
+                <Link to="/create-category">Create category </Link>
                  </div>
                 </tr>
                 <tr>
                     <th>Title</th>
-                    <th>Timestamp</th>
-                    <th>Category</th>
+                    <th>Icon</th>
                     <th></th>
                 </tr>
-                {articles.map(article => (
+                {categories.map(category => (
                 <tr>
-                    <td>{article.name}</td>    
-                    <td>{article.timestamp}</td>  
-                    <td>{article.category}</td>  
+                    <td>{category.name}</td>    
+                    <td>{category.icon}</td>  
                     <td class="td_icons">
-                        <Link to="/edit-article" state={article.id} ><i class="fa-regular fa-pen-to-square fa-xl"></i></Link>
-                        <i onClick={() => {remove(article.id)}} class="fa-regular fa-trash-can fa-xl"></i>
+                        <i onClick={() => {remove(category.id)}} class="fa-regular fa-trash-can fa-xl"></i>
                     </td>
                 </tr>
                     ))}
@@ -46,4 +43,4 @@ function Articles (props){
     )
 }
 
-export default Articles;    
+export default CategoriesList;    
