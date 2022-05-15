@@ -5,7 +5,7 @@ import {addDoc} from 'firebase/firestore'
 
 function CreateArticle(props) {
   let today = new Date();
-  let date=today.getDate() + "-"+ parseInt(today.getMonth()+1) +"-"+today.getFullYear();
+  let date = today.getDate() + "-"+ parseInt(today.getMonth()+1) +"-"+today.getFullYear();
 
   // get value from input
   const [title, setTitle] = useState()
@@ -27,7 +27,8 @@ function CreateArticle(props) {
       <h4> Title </h4>
       <input value={title} onInput={e => setTitle(e.target.value)} id="title" type="text" />
       <h4>Category</h4>
-      <select value={category} onInput={e => setCategory(e.target.value)}>
+      <select value={category} onChange={e => setCategory(e.target.value)}>
+        <option>Select category</option>
         {props.cat.map( category => (<option value={category.name}>{category.name}</option>))}
       </select>
       <h4>Resume</h4>

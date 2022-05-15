@@ -5,13 +5,31 @@ import { Link } from "react-router-dom";
 function Articles (props){
     const remove = props.remove;
     const update = props.update
-    const articles = props.articles
-    
-    
+
+    const [articles, setArticles] = useState([])
+    const [wordEntered, setWordEntered] = useState("");
+
     // collects articles from db on first render, then stops
     useEffect(() => {
        update();
+       setArticles(props.articles)
       }, []);
+
+    useEffect(() => { 
+     update();
+     const newFilter = props.articles.filter((value) => {
+        return value.name.toLowerCase().includes(wordEntered.toLowerCase());
+      });
+  
+      if (wordEntered === "") {
+        setArticles(props.articles)
+      } else {
+        setArticles(newFilter);
+      }
+    
+    
+        }, [wordEntered])
+
     return(
         <div class="article_wrapper">
             <h3>Edit articles</h3>
@@ -19,7 +37,9 @@ function Articles (props){
             <table>
                 <tr>
                 <div class="article_util">
-                <input placeholder="Search for articles"  ></input>
+                    <div>
+                        <input onInput={(e) => setWordEntered(e.target.value) } placeholder="Search for articles"  ></input>
+                    </div>
                 <Link to="/create-article" >Create article </Link>
                  </div>
                 </tr>
@@ -44,6 +64,7 @@ function Articles (props){
             </table>
         </div>
     )
+
 }
 
 export default Articles;    

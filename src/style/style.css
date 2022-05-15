@@ -284,6 +284,11 @@ p {
   margin-bottom: 20px;
 }
 
+.search_wrapper .search .header {
+  text-align: center;
+  padding: 5px;
+}
+
 .search_wrapper .search input {
   padding: 12px;
   width: 30%;

@@ -32,19 +32,22 @@ function SearchBar(props) {
     return (
     <div class="search_wrapper">
         <div class="search">
-          <div class="searchInputs">
-            <input
-              type="text"
-              placeholder={props.placeholder}
-              value={wordEntered}
-              onChange={handleFilter}
-            />
-            <div class="searchIcon">
-              {filteredData.length === 0 ? (
-                <i class="fa-regular fa-magnifying-glass"></i>
-              ) : (
-                <i class="fa-regular fa-xmark" onClick={clearInput}></i>
-              )}
+          <div>
+            <h1 class="header">How can we help?</h1>
+            <div class="searchInputs">
+                <input
+                  type="text"
+                  placeholder={props.placeholder}
+                  value={wordEntered}
+                  onChange={handleFilter}
+                />
+                <div class="searchIcon">
+                  {filteredData.length === 0 ? (
+                    <i class="fa-regular fa-magnifying-glass"></i>
+                  ) : (
+                    <i class="fa-regular fa-xmark" onClick={clearInput}></i>
+                  )}
+                </div>
             </div>
           </div>
           {filteredData.length !== 0 && (

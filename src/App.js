@@ -13,7 +13,6 @@ import Home from './components/Home';
 import Articles from './components/Articles';
 import Nav from './components/Nav';
 import EditArticle from './components/EditArticle';
-import Styling from './components/Styling';
 import CreateArticle from './components/CreateArticle';
 import CreateCategory from './components/CreateCategory';
 import CategoriesList from './components/CategoriesList';
@@ -72,7 +71,6 @@ function App() {
             <Route path="/admin/:name" element={<><Admin /> <CategoryOpen  articles={articles} cat={categories}/></>} />
             <Route path="/articles" element={<><Admin /> <Articles articles={articles} remove={deleteArticle} update={getArticles} /></>}></Route>
             <Route path="/categories-list" element={<><Admin /> <CategoriesList cat={categories} remove={deleteCategory} update={getCategories} /></>}></Route>
-            <Route path="/styling" element={<><Admin /> <Styling /></>}> </Route>
             <Route path="/create-article" element={<><Admin /><CreateArticle cat={categories} articlesRef={articlesRef}  articles={articles} /></>}></Route>
             <Route path="/create-category" element={<><Admin /><CreateCategory categoriesRef={categoriesRef} cat={categories}  /></>}></Route>
             <Route path="/edit-article" element={<><Admin /><EditArticle cat={categories} articlesRef={articlesRef} articles={articles}/></>}></Route>
