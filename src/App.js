@@ -24,6 +24,10 @@ import "./style/style.css";
 
 function App() {
 
+  let count = 0;
+  const updateCount = () => {
+    count = count++;
+  }
   // get categories from database
   const [categories, setCategories] = useState([]);
   const categoriesRef = collection(db, "categories")
@@ -32,11 +36,6 @@ function App() {
     const data = await getDocs(categoriesRef)
     setCategories(data.docs.map((doc) => ({...doc.data(), id: doc.id})))
   };
-
-  useEffect(() => {
-    getCategories()
-  }, [])
-
   // get articles from database
   const [articles, setArticles] = useState([]);
   const articlesRef = collection(db, "articles")
@@ -46,22 +45,25 @@ function App() {
     setArticles(data.docs.map((doc) => ({...doc.data(), id: doc.id})))
   };
 
-  useEffect(() => {
-    getArticles()
-  }, [])
 
   const deleteArticle = async (id) => {
     const articleDoc = doc(db, "articles", id);
-    await deleteDoc(articleDoc)
-    getArticles();
+    await deleteDoc(articleDoc);
+    updateCount();
+    console.log(count);
+    getArticles()
   } 
   
   const deleteCategory = async (id) => {
     const categoryDoc = doc(db, "categories", id);
     await deleteDoc(categoryDoc)
-    getCategories();
+    updateCount();
+    getCategories()
   } 
-
+  useEffect(() =>{
+    getCategories()
+    getArticles()
+  },[count])
   return (
     <Router>     
         <Routes>
@@ -69,8 +71,8 @@ function App() {
             <Route path="/:name" element={<CategoryOpen articles={articles} cat={categories}/>} ></Route>
             <Route path="/admin" element={<><Admin /> <Home  articles={articles} cat={categories}/></>}></Route>
             <Route path="/admin/:name" element={<><Admin /> <CategoryOpen  articles={articles} cat={categories}/></>} />
-            <Route path="/articles" element={<><Admin /> <Articles articles={articles} remove={deleteArticle} update={getArticles} /></>}></Route>
-            <Route path="/categories-list" element={<><Admin /> <CategoriesList cat={categories} remove={deleteCategory} update={getCategories} /></>}></Route>
+            <Route path="/articles" element={<><Admin /> <Articles articles={articles} remove={deleteArticle} update={getArticles}  /></>}></Route>
+            <Route path="/categories-list" element={<><Admin /> <CategoriesList cat={categories} remove={deleteCategory} update={getCategories} count={count}/></>}></Route>
             <Route path="/create-article" element={<><Admin /><CreateArticle cat={categories} articlesRef={articlesRef}  articles={articles} /></>}></Route>
             <Route path="/create-category" element={<><Admin /><CreateCategory categoriesRef={categoriesRef} cat={categories}  /></>}></Route>
             <Route path="/edit-article" element={<><Admin /><EditArticle cat={categories} articlesRef={articlesRef} articles={articles}/></>}></Route>

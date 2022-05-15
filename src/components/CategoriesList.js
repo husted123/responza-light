@@ -6,29 +6,8 @@ function CategoriesList (props){
     const remove = props.remove;
     const update = props.update
 
-    const [categories, setCategories] = useState([])
-    const [wordEntered, setWordEntered] = useState("");
 
-    // collects articles from db on first render, then stops
-    useEffect(() => {
-       update();
-       setCategories(props.cat)
-      }, []);
 
-    useEffect(() => { 
-     update();
-     const newFilter = props.cat.filter((value) => {
-        return value.name.toLowerCase().includes(wordEntered.toLowerCase());
-      });
-  
-      if (wordEntered === "") {
-        setCategories(props.cat)
-      } else {
-        setCategories(newFilter);
-      }
-    
-    
-        }, [wordEntered])
     
     // collects articles from db on first render, then stops
     useEffect(() => {
@@ -41,7 +20,6 @@ function CategoriesList (props){
             <table>
                 <tr>
                 <div class="article_util">
-                <input  onInput={(e) => setWordEntered(e.target.value) } placeholder="Search for articles"  ></input>
                 <Link to="/create-category">Create category </Link>
                  </div>
                 </tr>
@@ -50,7 +28,7 @@ function CategoriesList (props){
                     <th>Icon</th>
                     <th></th>
                 </tr>
-                {categories.map(category => (
+                {props.cat.map(category => (
                 <tr>
                     <td>{category.name}</td>    
                     <td>{category.icon}</td>  
