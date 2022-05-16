@@ -3,15 +3,14 @@ import { Link } from "react-router-dom";
 
 
 function Articles (props){
+
     const remove = props.remove;
     const update = props.update
-    const articles = props.articles
     const [wordEntered, setWordEntered] = useState("");
 
 
     useEffect(() =>{
        update()
-       console.log(props.articles);
       },[])
 
     return(

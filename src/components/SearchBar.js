@@ -1,7 +1,7 @@
 import React from 'react';
 import {useState, useEffect} from 'react'
 import Modal from './Modal';
-
+import { Link } from 'react-router-dom';
 function SearchBar(props) {
 
   const [openModal, setOpenModal] = useState(false)
@@ -32,6 +32,7 @@ function SearchBar(props) {
     return (
     <div class="search_wrapper">
         <div class="search">
+          <Link to="/admin">Go to admin</Link>
           <div>
             <h1 class="header">How can we help?</h1>
             <div class="searchInputs">

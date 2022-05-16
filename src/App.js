@@ -36,6 +36,8 @@ function App() {
     const data = await getDocs(categoriesRef)
     setCategories(data.docs.map((doc) => ({...doc.data(), id: doc.id})))
   };
+
+
   // get articles from database
   const [articles, setArticles] = useState([]);
   const articlesRef = collection(db, "articles")
@@ -49,21 +51,22 @@ function App() {
   const deleteArticle = async (id) => {
     const articleDoc = doc(db, "articles", id);
     await deleteDoc(articleDoc);
-    updateCount();
-    console.log(count);
     getArticles()
   } 
   
   const deleteCategory = async (id) => {
     const categoryDoc = doc(db, "categories", id);
     await deleteDoc(categoryDoc)
-    updateCount();
     getCategories()
   } 
+
+  
   useEffect(() =>{
     getCategories()
     getArticles()
-  },[count])
+  },[])
+
+
   return (
     <Router>     
         <Routes>
