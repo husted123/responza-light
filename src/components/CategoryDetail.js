@@ -45,7 +45,7 @@ const CategoryDetail = (props) =>
                         <i class="fa-solid fa-circle-arrow-right fa-2x"></i>
                         <div>
                            <h1>{article.name}</h1>
-                           <p>{article.text}</p>
+                           <p>{article.resume}</p>
                         </div>
                      </div>
                         <h2>{article.timestamp}</h2>
