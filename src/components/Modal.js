@@ -11,12 +11,12 @@ function Modal(props) {
                     <div class="title">
                         <div class="title_left">
                             <h1>{article.name}</h1>
-                            <h2>category</h2>
+                            <h2>{article.category}</h2>
                         </div>
                         <h2>{article.timestamp}</h2>
                     </div>
                     <div class="body">
-                        <p>{article.longtext}</p>
+                        <p>{article.text}</p>
                     </div>
                 </div>
             </div>

@@ -70,15 +70,15 @@ function App() {
   return (
     <Router>     
         <Routes>
-            <Route path="/" element={<Home articles={articles} cat={categories}/>} />
-            <Route path="/:name" element={<CategoryOpen articles={articles} cat={categories}/>} ></Route>
-            <Route path="/admin" element={<><Admin /> <Home  articles={articles} cat={categories}/></>}></Route>
-            <Route path="/admin/:name" element={<><Admin /> <CategoryOpen  articles={articles} cat={categories}/></>} />
-            <Route path="/articles" element={<><Admin /> <Articles articles={articles} remove={deleteArticle} update={getArticles}  /></>}></Route>
-            <Route path="/categories-list" element={<><Admin /> <CategoriesList cat={categories} remove={deleteCategory} update={getCategories} count={count}/></>}></Route>
-            <Route path="/create-article" element={<><Admin /><CreateArticle cat={categories} articlesRef={articlesRef}  articles={articles} /></>}></Route>
-            <Route path="/create-category" element={<><Admin /><CreateCategory categoriesRef={categoriesRef} cat={categories}  /></>}></Route>
-            <Route path="/edit-article" element={<><Admin /><EditArticle cat={categories} articlesRef={articlesRef} articles={articles}/></>}></Route>
+            <Route path="/"                   element={<Home articles={articles} cat={categories}/>} />
+            <Route path="/:name"              element={<CategoryOpen articles={articles} cat={categories}/>} ></Route>
+            <Route path="/admin"              element={<><Admin /> <Home  articles={articles} cat={categories}/></>}></Route>
+            <Route path="/admin/:name"        element={<><Admin /> <CategoryOpen  articles={articles} cat={categories}/></>} />
+            <Route path="/articles"           element={<><Admin /> <Articles articles={articles} remove={deleteArticle} update={getArticles}  /></>}></Route>
+            <Route path="/categories-list"    element={<><Admin /> <CategoriesList cat={categories} remove={deleteCategory} update={getCategories} count={count}/></>}></Route>
+            <Route path="/create-article"     element={<><Admin /><CreateArticle cat={categories} articlesRef={articlesRef}  articles={articles} /></>}></Route>
+            <Route path="/create-category"    element={<><Admin /><CreateCategory categoriesRef={categoriesRef} cat={categories}  /></>}></Route>
+            <Route path="/edit-article"       element={<><Admin /><EditArticle cat={categories} articlesRef={articlesRef} articles={articles}/></>}></Route>
         </Routes>
     </Router>
   );

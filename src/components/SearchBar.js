@@ -32,7 +32,6 @@ function SearchBar(props) {
     return (
     <div class="search_wrapper">
         <div class="search">
-          <Link to="/admin">Go to admin</Link>
           <div>
             <h1 class="header">How can we help?</h1>
             <div class="searchInputs">
